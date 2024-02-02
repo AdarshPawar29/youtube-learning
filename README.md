@@ -2,11 +2,8 @@
 
 1.  Create a new TypeScript React project:
 
-        bashCopy code
-
-        `npx create-react-app react-chrome-ext --template typescript
-
-    cd react-chrome-ext`
+    > npx create-react-app react-chrome-ext --template typescript cd
+    > react-chrome-ext
 
 2.  Clean up unnecessary files:
 
@@ -28,20 +25,16 @@
 
 1.  Install necessary dependencies:
 
-    bashCopy code
-
-    `npm install --save-dev webpack webpack-cli copy-webpack-plugin css-loader html-webpack-plugin ts-node`
+    > npm install --save-dev webpack webpack-cli copy-webpack-plugin
+    > css-loader html-webpack-plugin ts-node
 
 2.  Create webpack.config.js in the root directory and add the configuration.
 3.  Update package.json with build and watch scripts:
 
-        jsonCopy code
-
-        `"scripts": {
-
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack -w --config webpack.config.js"
-    }`
+    >      "scripts": {
+    >       "build": "webpack --config webpack.config.js",
+    >       "watch": "webpack -w --config webpack.config.js"
+    >     }
 
 ## Step 3: Add the Manifest file
 
@@ -51,9 +44,7 @@
 
 1.  Run the build command:
 
-    bashCopy code
-
-    `npm run build`
+    > npm run build
 
 ## Step 5: Load the extension
 
