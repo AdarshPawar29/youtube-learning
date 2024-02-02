@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+## Step 1: Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1.  Create a new TypeScript React project:
 
-## Available Scripts
+        bashCopy code
 
-In the project directory, you can run:
+        `npx create-react-app react-chrome-ext --template typescript
 
-### `npm start`
+    cd react-chrome-ext`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2.  Clean up unnecessary files:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    - Delete unwanted files to achieve the desired folder structure.
 
-### `npm test`
+3.  Update App.tsx:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    - Replace content with a basic Hello World component.
 
-### `npm run build`
+4.  Update index.tsx:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Create a root element in the DOM and append the app to it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5.  Add minimal CSS in App.css:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - Style the App and container elements.
 
-### `npm run eject`
+## Step 2: Add Webpack
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1.  Install necessary dependencies:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    bashCopy code
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    `npm install --save-dev webpack webpack-cli copy-webpack-plugin css-loader html-webpack-plugin ts-node`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2.  Create webpack.config.js in the root directory and add the configuration.
+3.  Update package.json with build and watch scripts:
 
-## Learn More
+        jsonCopy code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        `"scripts": {
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack -w --config webpack.config.js"
+    }`
+
+## Step 3: Add the Manifest file
+
+1.  Create manifest.json in the root directory and add the following content.
+
+## Step 4: Build the App
+
+1.  Run the build command:
+
+    bashCopy code
+
+    `npm run build`
+
+## Step 5: Load the extension
+
+1.  Open Chrome and navigate to chrome://extensions.
+2.  Click "Load unpacked" and select the dist directory in your project.
+3.  Test the extension by reloading the Extensions page and clicking the extension icon.
