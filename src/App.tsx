@@ -1,5 +1,11 @@
+import MainCard from "./components/MainCard";
+
 function App() {
-  return <div className="App">Hello World</div>;
+  return (
+    <div className="App">
+      <MainCard />
+    </div>
+  );
 }
 
 export default App;
